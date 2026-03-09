@@ -1,4 +1,4 @@
-package src.juego;
+package juego;
 
 public class Jugador {
 
