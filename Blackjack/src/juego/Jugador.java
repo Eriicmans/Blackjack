@@ -1,6 +1,7 @@
 package juego;
 
-public class Jugador {
+public class Jugador 
+{
 	private String nombre;
-	private String edad;
+	private int edad;
 }
