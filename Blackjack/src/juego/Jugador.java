@@ -3,7 +3,7 @@ package juego;
 public class Jugador 
 {
 	private String nombre;
-	private int beiCoin;
+	protected int beiCoin;
 	private ListaCartas mano;
 	private int beiCoinJugados;
 	
@@ -13,4 +13,5 @@ public class Jugador
 		this.mano = new ListaCartas();
 		this.beiCoin = 300;
 	}
+	
 }
