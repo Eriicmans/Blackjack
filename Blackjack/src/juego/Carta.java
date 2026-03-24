@@ -1,16 +1,18 @@
 package juego;
 
-public class Carta {
-	
-	private int valorNumerico;
-	private String valorString;
-	private String palo;
-	
-	
-	public Carta(int pValorNumerico, String pValorString, String pPalo) {
-		this.valorNumerico = pValorNumerico;
-		this.valorString = pValorString;
-		this.palo = pPalo;
-	}
-	
+public abstract class Carta {
+    protected String palo;
+    protected String valorString;
+
+    public Carta(String pPalo, String pValorString) {
+        this.palo = pPalo;
+        this.valorString = pValorString;
+    }
+
+    // Método que se sobreescribirá usando ligadura dinámica
+    public abstract int valorCarta(); 
 }
+
+
+
+
