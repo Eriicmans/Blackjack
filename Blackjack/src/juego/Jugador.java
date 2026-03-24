@@ -25,11 +25,8 @@ public class Jugador
 		
 	}
 	
-	public boolean seHaPlantado() {
-		
-	}
 	
-	public int sumaMano() {
+	public int valorMano() {
 		
 	}
 	

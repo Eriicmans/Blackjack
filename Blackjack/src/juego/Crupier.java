@@ -8,7 +8,7 @@ public class Crupier extends Jugador {
 	}
 
 	public boolean debePedirCarta() {
-        if (this.sumaMano() < 17) {
+        if (this.valorMano() < 17) {
             return true;
         } else {
             return false; // Se planta automáticamente si tiene 17 o más
