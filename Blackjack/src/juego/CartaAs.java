@@ -1,7 +1,9 @@
 package juego;
 
 public class CartaAs extends Carta {
+	
     public CartaAs(String pPalo, String pValorString) {
+    	
         super(pPalo, pValorString);
     }
 

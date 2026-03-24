@@ -14,4 +14,27 @@ public class Jugador
 		this.beiCoin = 300;
 	}
 	
+	
+	// Metodos
+	
+	public Carta pedirCarta() {
+		
+	}
+	
+	public boolean seHaPasado() {
+		
+	}
+	
+	public boolean seHaPlantado() {
+		
+	}
+	
+	public int sumaMano() {
+		
+	}
+	
+	public boolean comprobarBeicoinsSuficientes() {
+		
+	}
 }
+

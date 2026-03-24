@@ -1,6 +1,7 @@
 package juego;
 
 public class CartaNormal extends Carta {
+	
     private int valorNumerico;
 
     public CartaNormal(String pPalo, String pValorString, int pValorNumerico) {
