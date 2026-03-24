@@ -19,7 +19,7 @@ public class ListaCartas {
 		lista.remove(pCarta);
 	}
 	
-	public int sumaMano() {
+	public int sumarMano() {
 		
 	}
 }

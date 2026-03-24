@@ -22,12 +22,12 @@ public class Jugador
 	}
 	
 	public boolean seHaPasado() {
-		
+		return this.valorMano() > 21;
 	}
 	
 	
 	public int valorMano() {
-		
+		return this.mano.sumarMano();
 	}
 	
 	public boolean comprobarBeicoinsSuficientes() {
