@@ -6,6 +6,7 @@ public class Jugador
 	protected int beiCoin;
 	private ListaCartas mano;
 	private int beiCoinJugados;
+	private boolean seHaPasado;
 	
 	
 	public Jugador(String pNomb) {
