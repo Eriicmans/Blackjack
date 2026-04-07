@@ -1189,7 +1189,7 @@
           </listeners>
           <visibility class="net.java.amateras.uml.classdiagram.model.Visibility$1" reference="../../../parent/children/net.java.amateras.uml.classdiagram.model.ClassModel[2]/sourceConnections/net.java.amateras.uml.classdiagram.model.AggregationModel/target/parent/children/net.java.amateras.uml.classdiagram.model.ClassModel[3]/children/net.java.amateras.uml.classdiagram.model.OperationModel[6]/visibility"/>
           <name>invertir</name>
-          <type>void</type>
+          <type></type>
           <params>
             <net.java.amateras.uml.classdiagram.model.Argument>
               <name>pInversion</name>
