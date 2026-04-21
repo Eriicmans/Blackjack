@@ -1,37 +1,37 @@
 package juego;
 
-public class Jugador 
-{
-	private String nombre;
-	protected int beiCoin;
-	private ListaCartas mano;
-	private int beiCoinJugados;
-	
-	
-	public Jugador(String pNomb) {
-		this.nombre = pNomb;
-		this.mano = new ListaCartas();
-		this.beiCoin = 300;
-	}
-	
-	
-	// Metodos
-	
-	public Carta pedirCarta() {
-		
-	}
-	
-	public boolean seHaPasado() {
-		return this.valorMano() > 21;
-	}
-	
-	
-	public int valorMano() {
-		return this.mano.sumarMano();
-	}
-	
-	public boolean comprobarBeicoinsSuficientes() {
-		
-	}
-}
+public abstract class Jugador {
+    protected ListaCartas mano;
+    private String nombre;
 
+    public Jugador(String pJugador) {
+        this.nombre = pJugador;
+        this.mano = new ListaCartas();
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public boolean seHaPasado() {
+        return this.valorMano() > 21; 
+    }
+
+    public int valorMano() {
+        return 0;
+    }
+    
+    public void mostrarMano() {
+        System.out.println("Mano de " + this.nombre + ":");
+    }
+
+    public abstract void juega();
+
+    public void pedirCarta() {
+        Baraja b = Baraja.getMiBaraja();
+        Carta nuevaCarta = b.extraerCarta();
+        if (nuevaCarta != null) {
+            this.mano.añadirCarta(nuevaCarta);
+        }
+    }
+}

@@ -1,18 +1,17 @@
 package juego;
 
-public abstract class Carta {
+public class Carta {
     private String palo;
     private String valorString; //se usa string para imprimir que es una J,Q,K
-
-    public Carta(String pPalo, String pValorString) {
+    private int valorNum;
+    
+    public Carta(int pValorNum, String pPalo) {
         this.palo = pPalo;
-        this.valorString = pValorString;
+        this.valorNum = pValorNum;
     }
 
-    // Ligadura dinamica
-    public abstract int valorCarta(); 
+    public  int valorCarta() {
+    	return 0;
+	}
+
 }
-
-
-
-
