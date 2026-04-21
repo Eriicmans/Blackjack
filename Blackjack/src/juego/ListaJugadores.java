@@ -1,6 +1,8 @@
 package juego;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+
 
 public class ListaJugadores {
 	
@@ -10,7 +12,27 @@ public class ListaJugadores {
 		this.lista = new ArrayList<Jugador>();
 	}
 	
-	public void añadirJugador(Jugador pJugador) {
+	public void registrarJugadores(Jugador pJugador) {
 		this.lista.add(pJugador);
+	}
+	
+	private Iterator<Jugador> getIterador(){
+		return lista.iterator();
+	}
+	
+	public void resolverRonda() {
+		null;
+	}
+	
+	public void jugadoresJuegan() {
+		null;
+	}
+	
+	public void faseInversiones() {
+		null;
+	}
+	
+	public void repartirCartas() {
+		null;
 	}
 }

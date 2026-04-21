@@ -1,38 +1,45 @@
 package juego;
 
-public class Jugador 
-{
-	private String nombre;
-	protected int beiCoin;
-	private ListaCartas mano;
-	private int beiCoinJugados;
-	private boolean seHaPasado;
-	
-	
-	public Jugador(String pNomb) {
-		this.nombre = pNomb;
-		this.mano = new ListaCartas();
-		this.beiCoin = 300;
-	}
-	
-	
-	// Metodos
-	
-	public Carta pedirCarta() {
-		
-	}
-	
-	public boolean seHaPasado() {
-		return this.valorMano() > 21;
-	}
-	
-	
-	public int valorMano() {
-		return this.mano.sumarMano();
-	}
-	
-	public boolean comprobarBeicoinsSuficientes() {
-		
-	}
-}
 
+public class Jugador {
+
+    private ListaCartas mano;
+    private String nombre;
+
+    // Constructor
+    public Jugador(String pJugador) {
+        this.nombre = pJugador;
+    }
+
+    public boolean seHaPasado() {
+        return false; 
+    }
+
+    public boolean seHaPlantado() {
+        return false;
+    }
+
+    public int valorMano() {
+        return 0;
+    }
+
+    public boolean verificarBeiCoins() {
+        return false;
+    }
+
+    public int getBeicoins() {
+        return 0;
+    }
+
+    public void juega() {
+        // Cuerpo vacío
+    }
+
+    public void invertir(int pInversion) {
+        // Cuerpo vacío
+    }
+
+    public void pedirCarta() {
+        // Cuerpo vacío
+    }
+}
