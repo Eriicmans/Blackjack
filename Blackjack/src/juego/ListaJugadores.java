@@ -25,7 +25,11 @@ public class ListaJugadores {
 	}
 	
 	public void jugadoresJuegan() {
-		null;
+	    Iterator<Jugador> itr = this.getIterador();
+	    while (itr.hasNext()) {
+	        Jugador j = itr.next();
+	        j.juega();
+	    }
 	}
 	
 	public void faseInversiones() {
