@@ -1,11 +1,12 @@
 package juego;
 
 public abstract class Jugador {
-    protected ListaCartas mano;
+
+    private ListaCartas mano; // Ahora es PRIVADO
     private String nombre;
 
-    public Jugador(String pJugador) {
-        this.nombre = pJugador;
+    public Jugador(String pNombre) {
+        this.nombre = pNombre;
         this.mano = new ListaCartas();
     }
 
@@ -13,25 +14,39 @@ public abstract class Jugador {
         return this.nombre;
     }
 
-    public boolean seHaPasado() {
-        return this.valorMano() > 21; 
-    }
-
     public int valorMano() {
-        return 0;
-    }
-    
-    public void mostrarMano() {
-        System.out.println("Mano de " + this.nombre + ":");
+        return this.mano.sumarMano();
     }
 
-    public abstract void juega();
+    public boolean seHaPasado() {
+        return this.valorMano() > 21;
+    }
+
+    public void mostrarMano() {
+        System.out.println("  Mano de " + this.nombre + ":");
+        System.out.println(this.mano.mostrar());
+        System.out.println("  Valor: " + this.valorMano());
+    }
 
     public void pedirCarta() {
-        Baraja b = Baraja.getMiBaraja();
-        Carta nuevaCarta = b.extraerCarta();
+        Baraja baraja = Baraja.getBaraja();
+        Carta nuevaCarta = baraja.extraerCarta();
         if (nuevaCarta != null) {
             this.mano.añadirCarta(nuevaCarta);
         }
+    }
+
+    public void reiniciarMano() {
+        this.mano.vaciar();
+    }
+
+    public abstract void juega();
+        
+    public boolean tieneBlackjackNatural() {
+        return this.mano.esBlackjackNatural();
+    }
+    
+    public Carta getPrimeraCarta() {
+        return this.mano.getPrimeraCarta();
     }
 }

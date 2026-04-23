@@ -4,28 +4,67 @@ import java.util.Scanner;
 
 public class Teclado {
 
-    // Atributos privados
     private Scanner sc;
-    private static Teclado miTeclado; // Subrayado = static
+    private static Teclado miTeclado;
 
-    // Constructor (implÌcito por el patrÛn, aunque no estÈ en el diagrama)
     private Teclado() {
+        this.sc = new Scanner(System.in);
     }
 
-    // MÈtodos p˙blicos
     public static Teclado getTeclado() {
-        return null;
+        if (miTeclado == null) {
+            miTeclado = new Teclado();
+        }
+        return miTeclado;
     }
 
+    /**
+     * Lee un String no vac√≠o mostrando el mensaje de cortes√≠a.
+     */
     public String leerString(String pMensajeCortesia) {
-        return "";
+        String resultado = "";
+        while (resultado.isEmpty()) {
+            System.out.print(pMensajeCortesia + " ");
+            resultado = sc.nextLine().trim();
+            if (resultado.isEmpty()) {
+                System.out.println("  [!] El nombre no puede estar vac√≠o. Int√©ntalo de nuevo.");
+            }
+        }
+        return resultado;
     }
 
+    /**
+     * Lee un entero en el rango [pDesde, pHasta] inclusive.
+     */
     public int leerEntero(String pMensajeCortesia, int pDesde, int pHasta) {
-        return 0;
+        int resultado = pDesde - 1;
+        while (resultado < pDesde || resultado > pHasta) {
+            System.out.print(pMensajeCortesia + " [" + pDesde + "-" + pHasta + "]: ");
+            String linea = sc.nextLine().trim();
+            try {
+                resultado = Integer.parseInt(linea);
+                if (resultado < pDesde || resultado > pHasta) {
+                    System.out.println("  [!] Introduce un n√∫mero entre " + pDesde + " y " + pHasta + ".");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("  [!] Entrada no v√°lida. Introduce un n√∫mero entero.");
+            }
+        }
+        return resultado;
     }
 
+    /**
+     * Lee una respuesta S√≠/No. Devuelve true si el usuario responde pSi.
+     */
     public boolean leerSiNo(String pMensajeCortesia, String pSi, String pNo) {
-        return false;
+        String respuesta = "";
+        while (!respuesta.equalsIgnoreCase(pSi) && !respuesta.equalsIgnoreCase(pNo)) {
+            System.out.print(pMensajeCortesia + " (" + pSi + "/" + pNo + "): ");
+            respuesta = sc.nextLine().trim();
+            if (!respuesta.equalsIgnoreCase(pSi) && !respuesta.equalsIgnoreCase(pNo)) {
+                System.out.println("  [!] Responde " + pSi + " o " + pNo + ".");
+            }
+        }
+        return respuesta.equalsIgnoreCase(pSi);
     }
 }
