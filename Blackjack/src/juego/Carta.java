@@ -11,7 +11,7 @@ public class Carta {
     }
 
     public  int valorCarta() {
-    	return 0;
+    	return this.valorNum;
 	}
 
 }
